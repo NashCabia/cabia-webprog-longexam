@@ -1,5 +1,6 @@
 import Button from '../../components/Button';
 import banner from '../../assets/img/nu_bulldogex_banner.jpg';
+import products from '../../assets/product-content.js';
 
 const HomePage = () => {
     return (
@@ -46,27 +47,27 @@ const HomePage = () => {
 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-                        <p className="text-2xl font-bold text-zinc-900">08</p>
+                        <p className="text-2xl font-bold text-zinc-900">{products[0].price}</p>
                         <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-                            Products
+                            {products[0].title}
                         </p>
                     </div>
                     <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-                        <p className="text-2xl font-bold text-zinc-900">06</p>
+                        <p className="text-2xl font-bold text-zinc-900">{products[1].price}</p>
                         <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-                            Categories
+                            {products[1].title}
                         </p>
                     </div>
                     <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-                        <p className="text-2xl font-bold text-zinc-900">24</p>
+                        <p className="text-2xl font-bold text-zinc-900">{products[2].price}</p>
                         <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-                            Orders
+                            {products[2].title}
                         </p>
                     </div>
                     <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-                        <p className="text-2xl font-bold text-zinc-900">03</p>
+                        <p className="text-2xl font-bold text-zinc-900">{products[3].price}</p>
                         <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-                            Pickup Slots
+                            {products[3].title}
                         </p>
                     </div>
                 </div>
@@ -82,34 +83,58 @@ const HomePage = () => {
 
                 <div className="grid gap-4 md:grid-cols-3">
                     <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-                        <div className="flex aspect-4/3 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                            <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                        <div className="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-[1.25rem] bg-zinc-200">
+                            <img
+                                src={products[0].imageSrc}
+                                alt={products[0].imageAlt ?? products[0].title}
+                                className="absolute inset-0 h-full w-full object-cover"
+                                loading="lazy"
+                                onError={(event) => {
+                                    event.currentTarget.style.display = 'none';
+                                }}
+                            />
                         </div>
                         <h3 className="mt-4 text-lg font-semibold text-zinc-900">Daily Essentials</h3>
                         <p className="mt-3 text-sm leading-6 text-zinc-600">
-                            Bags, tumblers, lanyards, and items used every school day.
+                            Featured: {products[0].title} • {products[0].category}
                         </p>
                         <Button to="/products" className="mt-4" variant="primary">View Products</Button>
                     </article>
 
                     <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-                        <div className="flex aspect-4/3 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                            <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                        <div className="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-[1.25rem] bg-zinc-200">
+                            <img
+                                src={products[1].imageSrc}
+                                alt={products[1].imageAlt ?? products[1].title}
+                                className="absolute inset-0 h-full w-full object-cover"
+                                loading="lazy"
+                                onError={(event) => {
+                                    event.currentTarget.style.display = 'none';
+                                }}
+                            />
                         </div>
                         <h3 className="mt-4 text-lg font-semibold text-zinc-900">Study Supplies</h3>
                         <p className="mt-3 text-sm leading-6 text-zinc-600">
-                            Notes, desk tools, and study kits for class and review weeks.
+                            Featured: {products[1].title} • {products[1].category}
                         </p>
                         <Button to="/products" className="mt-4" variant="primary">Shop Supplies</Button>
                     </article>
 
                     <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-                        <div className="flex aspect-4/3 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                            <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                        <div className="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-[1.25rem] bg-zinc-200">
+                            <img
+                                src={products[4].imageSrc}
+                                alt={products[4].imageAlt ?? products[4].title}
+                                className="absolute inset-0 h-full w-full object-cover"
+                                loading="lazy"
+                                onError={(event) => {
+                                    event.currentTarget.style.display = 'none';
+                                }}
+                            />
                         </div>
                         <h3 className="mt-4 text-lg font-semibold text-zinc-900">Campus Apparel</h3>
                         <p className="mt-3 text-sm leading-6 text-zinc-600">
-                            Comfortable pieces for class days, commute days, and weekends.
+                            Featured: {products[4].title} • {products[4].category}
                         </p>
                         <Button to="/products" className="mt-4" variant="primary">
                             View Apparel

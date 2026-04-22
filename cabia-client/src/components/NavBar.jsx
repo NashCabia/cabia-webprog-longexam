@@ -9,10 +9,18 @@ const links = [
 
 const navLinkClassName = ({ isActive }) =>
   [
-    'rounded-full border-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] transition',
+    'rounded-full border-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-100',
     isActive
       ? 'border-zinc-900 bg-zinc-900 text-zinc-50'
       : 'border-transparent text-zinc-500 hover:border-zinc-900 hover:bg-zinc-50 hover:text-zinc-900',
+  ].join(' ');
+
+const actionLinkClassName = ({ isActive }) =>
+  [
+    'rounded-full border-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-100',
+    isActive
+      ? 'border-zinc-900 bg-zinc-900 text-zinc-50'
+      : 'border-zinc-900 bg-zinc-50 text-zinc-900 hover:bg-zinc-200',
   ].join(' ');
 
 const NavBar = () => {
@@ -33,6 +41,15 @@ const NavBar = () => {
             </NavLink>
           ))}
         </nav>  
+
+        <nav className="flex items-center gap-2" aria-label="Account">
+          <NavLink to="/auth/signin" className={actionLinkClassName}>
+            Sign In
+          </NavLink>
+          <NavLink to="/auth/signup" className={actionLinkClassName}>
+            Sign Up
+          </NavLink>
+        </nav>
       </div>
     </header>
   );

@@ -1,5 +1,6 @@
 import Button from '../../components/Button';
 import logo from '../../assets/img/nubdexchange_logo.png';
+import products from '../../assets/product-content.js';
 
 const AboutPage = () => {
   return (
@@ -43,27 +44,27 @@ const AboutPage = () => {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-            <p className="text-2xl font-bold text-zinc-900">08</p>
+            <p className="text-2xl font-bold text-zinc-900">{products[4].price}</p>
             <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Items
+              {products[4].title}
             </p>
           </div>
           <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-            <p className="text-2xl font-bold text-zinc-900">06</p>
+            <p className="text-2xl font-bold text-zinc-900">{products[5].price}</p>
             <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Categories
+              {products[5].title}
             </p>
           </div>
           <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-            <p className="text-2xl font-bold text-zinc-900">03</p>
+            <p className="text-2xl font-bold text-zinc-900">{products[6].price}</p>
             <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Pickup Slots
+              {products[6].title}
             </p>
           </div>
           <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-            <p className="text-2xl font-bold text-zinc-900">24</p>
+            <p className="text-2xl font-bold text-zinc-900">{products[7].price}</p>
             <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
-              Orders
+              {products[7].title}
             </p>
           </div>
         </div>
@@ -106,17 +107,49 @@ const AboutPage = () => {
               Category Grid
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+              <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-[1.25rem] bg-zinc-200">
+                <img
+                  src={products[0].imageSrc}
+                  alt={products[0].imageAlt ?? products[0].title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                  }}
+                />
               </div>
-              <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+              <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-[1.25rem] bg-zinc-200">
+                <img
+                  src={products[1].imageSrc}
+                  alt={products[1].imageAlt ?? products[1].title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                  }}
+                />
               </div>
-              <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+              <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-[1.25rem] bg-zinc-200">
+                <img
+                  src={products[2].imageSrc}
+                  alt={products[2].imageAlt ?? products[2].title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                  }}
+                />
               </div>
-              <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+              <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-[1.25rem] bg-zinc-200">
+                <img
+                  src={products[3].imageSrc}
+                  alt={products[3].imageAlt ?? products[3].title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                  }}
+                />
               </div>
             </div>
             <Button to="/products" className="mt-5">View Products</Button>

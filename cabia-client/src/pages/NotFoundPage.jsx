@@ -34,11 +34,30 @@ const NotFoundPage = () => {
               <p className="mt-1 text-sm text-zinc-600">Return to the homepage</p>
               <Button to="/" className="mt-3">Go Home</Button>
             </div>
+
+            <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
+              <h3 className="font-semibold text-zinc-900">About</h3>
+              <p className="mt-1 text-sm text-zinc-600">Learn what the store is for</p>
+              <Button to="/about" className="mt-3">View About</Button>
+            </div>
             
             <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
               <h3 className="font-semibold text-zinc-900">Products</h3>
               <p className="mt-1 text-sm text-zinc-600">Browse all featured store items</p>
               <Button to="/products" className="mt-3">View Products</Button>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
+                <h3 className="font-semibold text-zinc-900">Sign In</h3>
+                <p className="mt-1 text-sm text-zinc-600">Access your account</p>
+                <Button to="/auth/signin" className="mt-3">Go to Sign In</Button>
+              </div>
+              <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
+                <h3 className="font-semibold text-zinc-900">Sign Up</h3>
+                <p className="mt-1 text-sm text-zinc-600">Create a new account</p>
+                <Button to="/auth/signup" className="mt-3">Go to Sign Up</Button>
+              </div>
             </div>
           </div>
         </div>
